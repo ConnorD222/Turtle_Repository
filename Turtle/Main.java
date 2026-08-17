@@ -7,12 +7,20 @@ public class Main {
   public static void main(String[] args) {  
     World world = new World(300,300);
    
-     
-    // Turtle yertle = new Turtle(world);
+    World world2 = new World();
+
+    World world3 = new World(true);
+
+    Turtle yertle = new Turtle(world);
+
+    Turtle marc = new Turtle(100, 100, world2);
+    
+    Turtle jenny = new Turtle(0, 0, world3);
+    
     // // Add your code here
-    // yertle.forward();
-    // yertle.turnRight();
-    // yertle.forward();
+    yertle.forward();
+    yertle.turnRight();
+    yertle.forward();
 
   
     // //world.setVisible(true);
