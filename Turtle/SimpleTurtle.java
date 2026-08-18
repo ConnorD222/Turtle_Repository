@@ -691,6 +691,68 @@ public class SimpleTurtle
    * about this turtle
    * @return a string with information about this object
    */
+
+  public void polygon(int sides, int size){
+    for(int i = 0; i < sides; i++){
+      this.forward(size);
+      this.turn(360/(double)sides);
+    }
+  }
+
+
+  public void house(int house_size, int roof_size){
+    this.setHeading(0);
+    this.forward(house_size);
+    this.turnLeft();
+    this.forward(house_size);
+    this.turnLeft();
+    this.forward(house_size);
+    this.turnLeft();
+    this.forward(house_size);
+    this.turnLeft();
+    this.forward(house_size);
+    this.moveTo(this.getXPos() - (int)(house_size/2.0), this.getYPos() - roof_size);
+    this.moveTo(this.getXPos() - (int)(house_size/2.0), this.getYPos() + roof_size);
+  }
+
+
+  public void squareLine(int num_squares, int square_size){
+    this.setHeading(90);
+    for(int i=0; i<num_squares; i++){
+      this.forward(square_size);
+      this.turnRight();
+      this.forward(square_size);
+      this.turnRight();
+      this.forward(square_size);
+      this.turnRight();
+      this.forward(square_size);
+      this.turnRight();
+      this.forward(square_size);
+    }
+  }
+
+  public void star(int num_points, int star_size){
+    this.setHeading(0);
+    for(int i=0; i < num_points; i++){
+      this.forward(star_size);
+      this.backward(star_size);
+      this.turn(-(360/num_points));
+    }
+  }
+
+  public void plus(int length, int width){
+    this.setHeading(0);
+    for(int i = 0; i < 4; i++){
+      this.forward(length);
+      this.turnLeft();
+      this.forward(width);
+      this.turnLeft();
+      this.forward(length);
+      this.turnRight();
+    }
+  }
+
+
   public String toString() 
   {
     return this.name + " turtle at " + this.xPos + ", " + 
